@@ -19,8 +19,8 @@ class ListadoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listado)
         var recyclerView: RecyclerView = findViewById(R.id.recyclerCollection)
-        viewModel.getListCollection().observe(this,Observer<CollentionModel>{
-            var adapter:CollectionAdapter = CollectionAdapter(it,applicationContext)
+        viewModel.getListCollection().observe(this,Observer<CollectionModel>{
+            adapter = CollectionAdapter(it,applicationContext)
             recyclerView.adapter = adapter
         })
 

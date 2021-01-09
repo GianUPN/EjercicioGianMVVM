@@ -10,38 +10,35 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 /**
- *  Created by Giancarlo Calderón on 08/01/2021.
+ *  Created by Giancarlo Calderón on 09/01/2021.
  */
-class CollectionRepository {
+class RestaurantRepository {
 
-    private lateinit var allCollectionsRest: MutableLiveData<CollectionModel>
-
-    fun getallCollectionRestaurants(): LiveData<CollectionModel>{
-        allCollectionsRest = MutableLiveData()
-        val retrofit:Retrofit = Retrofit.Builder()
+    private lateinit var restaurantDetails: MutableLiveData<RestaurantModel>
+    fun getRestauranDetails(resId:Int): LiveData<RestaurantModel> {
+        restaurantDetails = MutableLiveData()
+        val retrofit: Retrofit = Retrofit.Builder()
             .baseUrl(BuildConfig.URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
         val api = retrofit.create(ApiRetrofit::class.java)
-        val call = api.getCollections(BuildConfig.APIKEY)
-        call.enqueue(object : Callback<CollectionModel>{
+        val call = api.getRestaurant(resId,BuildConfig.APIKEY)
+        call.enqueue(object : Callback<RestaurantModel> {
             override fun onResponse(
-                call: Call<CollectionModel>,
-                response: Response<CollectionModel>
+                call: Call<RestaurantModel>,
+                response: Response<RestaurantModel>
             ) {
                 if (response.isSuccessful) {
                     println(response.body())
-                    allCollectionsRest.value = response.body()
+                    restaurantDetails.value = response.body()
                 }
             }
 
-            override fun onFailure(call: Call<CollectionModel>, t: Throwable) {
+            override fun onFailure(call: Call<RestaurantModel>, t: Throwable) {
                 Log.e("ZOMATO API ERROR",t.toString())
             }
-
         })
-        return allCollectionsRest
+        return restaurantDetails
     }
-
 }

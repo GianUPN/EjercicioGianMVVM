@@ -8,9 +8,9 @@ import androidx.lifecycle.ViewModel
  */
 class CollectionViewModel ():ViewModel(){
     private var repository: CollectionRepository = CollectionRepository()
-    private var allCollectionModel: LiveData<CollentionModel> = repository.getallCollectionRestaurants()
+    private var allCollectionModel: LiveData<CollectionModel> = repository.getallCollectionRestaurants()
 
-    fun getListCollection(): LiveData<CollentionModel> {
+    fun getListCollection(): LiveData<CollectionModel> {
         return allCollectionModel
     }
 }
