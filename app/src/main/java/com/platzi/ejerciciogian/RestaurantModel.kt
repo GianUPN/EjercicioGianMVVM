@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName
  */
 class RestaurantModel {
 
-    @SerializedName("location") lateinit var collectionModelInner:LocationModelInner
+    @SerializedName("location") lateinit var locationModelInner:LocationModelInner
     @SerializedName("name") lateinit var name: String
     @SerializedName("url") lateinit var url: String
     @SerializedName("cuisines") lateinit var cuisines: String

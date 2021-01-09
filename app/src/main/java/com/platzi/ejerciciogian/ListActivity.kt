@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
  *  Created by Giancarlo Calderón on 08/01/2021.
  */
 
-class ListadoActivity : AppCompatActivity() {
+class ListActivity : AppCompatActivity() {
 
     private lateinit var adapter: CollectionAdapter
     private val viewModel by lazy { ViewModelProviders.of(this).get(CollectionViewModel::class.java) }

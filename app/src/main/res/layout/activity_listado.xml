@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".ListadoActivity">
+    tools:context=".ListActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -42,7 +42,7 @@
                     android:layout_margin="5dp"
                     android:layout_toEndOf="@+id/img_zomato"
                     android:paddingStart="10dp"
-                    android:text="Zomato Prueba Platzi"
+                    android:text="Platzi test using Zomato API"
                     android:textColor="@color/colorTextPrimary"
                     android:textSize="16sp" />
 
@@ -62,7 +62,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:padding="5dp"
-                        android:text="Una app para buscar restaurantes en Nueva York"
+                        android:text="This app shows restaurants around New York"
                         android:textColor="#fff"
                         android:textSize="14sp"
                         android:textStyle="bold" />

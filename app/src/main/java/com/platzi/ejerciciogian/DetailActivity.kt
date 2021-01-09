@@ -35,7 +35,10 @@ class DetailActivity : AppCompatActivity() {
         viewModel.getrestaurantDetails(restaurantId.toInt()).observe(
             this,
             Observer<RestaurantModel> {
-
+                txt_city.setText(it.locationModelInner.city)
+                txt_direccion.setText(it.locationModelInner.address)
+                txt_review.setText(it.user_ratingModelInner.aggregate_rating)
+                txt_timing.setText(it.timings)
             })
         fab.setOnClickListener(View.OnClickListener {
             //Un pequeño extra de AR, la API no me envia el modelo 3D, lo transforme a .GLB y subi a un STORAGE para consumirlo, es una PIZZA
