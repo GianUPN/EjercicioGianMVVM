@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -39,9 +40,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:layout_toRightOf="@+id/img_zomato"
+                    android:layout_toEndOf="@+id/img_zomato"
                     android:paddingStart="10dp"
-                    android:paddingLeft="5dp"
                     android:text="Zomato Prueba Platzi"
                     android:textColor="@color/colorTextPrimary"
                     android:textSize="16sp" />
@@ -52,7 +52,7 @@
                     android:layout_below="@+id/titlebanner"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_toRightOf="@+id/img_zomato"
+                    android:layout_toEndOf="@+id/img_zomato"
                     android:background="#E40B62"
                     android:backgroundTint="@color/colorPrimary"
                     app:cardCornerRadius="10dp">
@@ -60,9 +60,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
                         android:padding="5dp"
-                        android:text="Una app para buscar restaurantes"
+                        android:text="Una app para buscar restaurantes en Nueva York"
                         android:textColor="#fff"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -73,26 +73,26 @@
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0" >
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerCollection"
             android:layout_width="match_parent"
-            tools:listitem="@layout/item_restaurant"
-            tools:itemCount="6"
+            android:layout_height="match_parent"
+            android:visibility="visible"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="2"
-            tools:orientation="vertical"
-            tools:scrollbars="vertical"
             app:reverseLayout="false"
-            android:layout_height="wrap_content"/>
+            app:spanCount="2"
+            tools:itemCount="6"
+            tools:listitem="@layout/item_restaurant"
+            tools:orientation="vertical"
+            tools:scrollbars="vertical" />
 
 
     </androidx.cardview.widget.CardView>
